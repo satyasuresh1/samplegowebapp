@@ -6,6 +6,7 @@ import(
 )
 
 func main(){
+	msgs:=[]string{"avg vps","sudden fall","avg battery"}
 	tpl,err := template.ParseFiles("index.html")
 	if err!=nil{
 		log.Fatal(err)
@@ -15,7 +16,7 @@ func main(){
 		log.Fatal(err)
 	}
 	defer nf.Close()
-	err = tpl.ExecuteTemplate(nf,"index.html",nil)
+	err = tpl.ExecuteTemplate(nf,"index.html",msgs)
 	if err!=nil{
 		log.Fatal(err)
 	}
