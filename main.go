@@ -7,6 +7,7 @@ import(
 
 func main(){
 	msgs:=[]string{"avg vps","sudden fall","avg battery"}
+
 	tpl,err := template.ParseFiles("index.html")
 	if err!=nil{
 		log.Fatal(err)
